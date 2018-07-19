@@ -9,7 +9,10 @@ class App extends React.Component {
     render() {
         return (
             <div> 
+                <div>
                 <StockList />
+                </div>
+                <button> transition </button>
             </div>
         )
     }

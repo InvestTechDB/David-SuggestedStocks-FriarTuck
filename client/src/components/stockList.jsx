@@ -1,14 +1,15 @@
 import Stock from './stock.jsx';
 
 var StockList = (props) => {
-    var rows = [];
+    var carousel1, carousel2, carousel3;
+    carousel1 = carousel2 = carousel3 = [];
 
     for (var i = 0; i < 12; i++) {
-        rows.push(<div class='stocks'><Stock /></div>);
+        rows.push(<div className='stocks'><Stock /></div>);
     }
 
     return (
-        <section class='carousel'>
+        <section className='carousel'>
             {rows}
         </section>
     )
