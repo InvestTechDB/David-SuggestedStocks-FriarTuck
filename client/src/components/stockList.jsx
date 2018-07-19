@@ -11,13 +11,13 @@ var StockList = (props) => {
  
     return (
         <section className='carousel'>
-        <div>
+        <div className='slide'>
             {carousel1}
-            </div>
-            <div>
+        </div>
+            <div className='slide'>
             {carousel2}
             </div>
-            <div>
+            <div className='slide'>
             {carousel3}
             </div>
         </section>

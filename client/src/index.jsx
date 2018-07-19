@@ -4,12 +4,16 @@ import StockList from './components/stockList.jsx';
 class App extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            currentImageIdx: 0
+        };
     }
 
     render() {
         return (
-            <div> 
-                <div>
+            <div id='cssCarousel'> 
+                <div id='carouselOverflow'>
                 <StockList />
                 </div>
                 <button> transition </button>

@@ -19,3 +19,18 @@
 #percent {
     margin-top: -18px;
 }
+
+#cssCarousel {
+    width: 40%;
+    height: 25%;
+    position: absolute;
+    -webkit-box-align: center;
+    display: flex;
+}
+
+#carouselOverflow {
+    overflow-x: hidden;
+    position: relative;
+    overflow-y: hidden;
+    width: 100%;
+}
