@@ -1,3 +1,6 @@
+import StockList from './components/stockList.jsx';
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -6,7 +9,7 @@ class App extends React.Component {
     render() {
         return (
             <div> 
-                Ayooo!
+                <StockList />
             </div>
         )
     }
