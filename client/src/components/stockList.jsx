@@ -4,15 +4,32 @@ var StockList = (props) => {
     var carousel1, carousel2, carousel3;
     carousel1 = carousel2 = carousel3 = [];
 
-    for (var i = 0; i < 12; i++) {
-        rows.push(<div className='stocks'><Stock /></div>);
-    }
+    carousel1 = populateCarousel(carousel1);
+    carousel2 = populateCarousel(carousel2);
+    carousel3 = populateCarousel(carousel3);
 
+ 
     return (
         <section className='carousel'>
-            {rows}
+        <div>
+            {carousel1}
+            </div>
+            <div>
+            {carousel2}
+            </div>
+            <div>
+            {carousel3}
+            </div>
         </section>
     )
 }
 
 export default StockList; 
+
+function populateCarousel(carousel) {
+    for (var i = 1; i <= 4; i++) {
+        carousel.push(<div className='stocks'><Stock /></div>);
+    }
+
+    return carousel;
+}

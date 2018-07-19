@@ -1,0 +1,21 @@
+.carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.stocks {
+    margin-right: 10px;
+}
+
+#analystRating {
+    display: flex;
+    flex-direction: row;
+}
+
+#tagA {
+}
+
+#percent {
+    margin-top: -18px;
+}
