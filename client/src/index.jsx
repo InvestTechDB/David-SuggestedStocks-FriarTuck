@@ -6,17 +6,31 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            currentImageIdx: 0
+            slideCount: 1
         };
+    }
+
+    slideNext() {
+        // this.setState({
+        //     slideCount: this.state.slideCount + 1
+        // })
+   
+    }
+
+    slidePrev() {
+        // this.setState({
+        //     slideCount: this.state.slideCount - 1
+        // })
+
+
     }
 
     render() {
         return (
             <div id='cssCarousel'> 
                 <div id='carouselOverflow'>
-                <StockList />
+                    <StockList count={this.state.slideCount} next={this.slideNext.bind(this)} prev={this.slidePrev.bind(this)}/>
                 </div>
-                <button> transition </button>
             </div>
         )
     }
