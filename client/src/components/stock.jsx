@@ -4,7 +4,7 @@ var Stock = (props) => {
         <a href='#'>
         <div> 
             <div> 
-                <p><strong>Apple </strong></p>
+                <p className='individualWrapper'><strong>Apple </strong></p>
             </div>
             <div id='analystRating'> 
                 <div id='tag'>
