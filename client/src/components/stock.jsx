@@ -3,7 +3,10 @@ class Stock extends React.Component {
         super(props);
         this.state = {
             analystRating: '60%',
-            price: '$192.20'
+            price: '$192.20',
+            change: '+',
+            percent: '0.95%',
+            instrument: 'Apple'
 
         }
     }
@@ -13,7 +16,7 @@ class Stock extends React.Component {
             <a href='#'>
             <div> 
                 <div> 
-                    <p className='individualWrapper'><strong>Apple </strong></p>
+                    <p className='individualWrapper'><strong>{this.state.instrument}</strong></p>
                 </div>
                 <div id='analystRating'> 
                     <div id='tag'>
@@ -30,7 +33,7 @@ class Stock extends React.Component {
                 </div>
                 <div>
                     <h2> {this.state.price} </h2>
-                    <span> + <span> 0.95% </span> </span>
+                    <span>{this.state.change}<span>{this.state.percent}</span> </span>
                 </div>
             </div>
             </a>

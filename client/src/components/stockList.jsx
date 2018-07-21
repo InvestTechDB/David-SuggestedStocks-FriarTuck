@@ -21,7 +21,7 @@ class StockList extends React.Component {
 
     movingRight() {
         var current = this.state.pixel;
-        current += 585; 
+        current += 570; 
 
         this.setState({
             pixel: current,
@@ -31,7 +31,7 @@ class StockList extends React.Component {
 
     movingLeft() {
         var current = this.state.pixel;
-        current -= 585; 
+        current -= 570; 
 
         this.setState({
             pixel: current,

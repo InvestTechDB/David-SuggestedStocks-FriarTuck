@@ -7,3 +7,5 @@ app.use(express.static('../client/dist'));
 app.listen(port, () => {
   console.log('listening on the port man!');
 });
+
+// app.get('/')

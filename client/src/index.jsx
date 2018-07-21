@@ -1,5 +1,6 @@
 import StockList from './components/stockList.jsx';
 import NewsList from './components/newslist.jsx';
+var faker = require('faker');
 
 class App extends React.Component {
     constructor(props) {
