@@ -110,10 +110,11 @@ p {
     transition:border-color .25s,box-shadow .25s,-webkit-box-shadow .25s;
 }
 
-.individualWrapper:hover {
-    background:#fafafa;
-    border-color:#fafafa;
+.stocks:hover {
+    background: rgb(249, 249, 249);
+    border-color:rgb(249, 249, 249);
 }
+
 
 h2{
     font-size:26px;
@@ -122,6 +123,14 @@ h2{
     line-height:30px;
     margin:0 0 16px;
 }
+
+#header{
+    font-size: 26px ;
+    font-weight: 500 ;
+    letter-spacing: -.14px ;
+    line-height: 30px ;
+}
+
 a{
     background-color:transparent;
     -webkit-text-decoration-skip:objects;
@@ -142,6 +151,10 @@ body .bold{
 :invalid{
     -webkit-box-shadow:none;
     box-shadow:none;
+}
+
+a {
+    text-decoration: none;
 }
 
 

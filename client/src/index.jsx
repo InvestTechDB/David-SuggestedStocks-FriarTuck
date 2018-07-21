@@ -1,5 +1,5 @@
 import StockList from './components/stockList.jsx';
-
+import NewsList from './components/newslist.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -27,9 +27,17 @@ class App extends React.Component {
 
     render() {
         return (
-            <div id='cssCarousel'> 
-                <div id='carouselOverflow'>
-                    <StockList count={this.state.slideCount} next={this.slideNext.bind(this)} prev={this.slidePrev.bind(this)}/>
+            <div id='mainContainer'>
+                <div id='newslist'>
+                    <NewsList />
+                </div>
+                <h2 id='header'> People Also Bought </h2>
+                <div id='cssCarousel'> 
+
+                    <div id='carouselOverflow'>
+                    
+                        <StockList count={this.state.slideCount} next={this.slideNext.bind(this)} prev={this.slidePrev.bind(this)}/>
+                    </div>
                 </div>
             </div>
         )
