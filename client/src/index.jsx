@@ -31,7 +31,7 @@ class App extends React.Component {
                 <div id='newslist'>
                     <NewsList />
                 </div>
-                <h2 id='header'> People Also Bought </h2>
+                <h2 id='header'><strong> People Also Bought </strong></h2>
                 <div id='cssCarousel'> 
 
                     <div id='carouselOverflow'>

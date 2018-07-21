@@ -6,7 +6,7 @@ class NewsList extends React.Component {
     render() {
     return (
         <div>
-        <h2> News </h2>
+        <h2><strong> News </strong></h2>
         </div>
     )
     }
