@@ -70,6 +70,10 @@ class Stock extends React.Component {
     }
 
     render() {
+        var style = {
+            color: this.state.change === '+' ? '#61cb9c' : '#e35f3f'
+        };
+    
         return (
             <a href='#'>
             <div> 
@@ -90,8 +94,8 @@ class Stock extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <h2> {this.state.price} </h2>
-                    <span>{this.state.change}<span>{this.state.percent}</span> </span>
+                    <h2 style={style}> {this.state.price} </h2>
+                    <span style={style}>{this.state.change}</span><span style={style}>{this.state.percent}</span>
                 </div>
             </div>
             </a>
