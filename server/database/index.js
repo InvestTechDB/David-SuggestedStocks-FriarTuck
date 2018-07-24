@@ -9,9 +9,9 @@ const grabAllCompanies = (callback) => {
     SELECT * FROM Company;
     `, (err, res) => {
         if (err) {
-            callback(err, null);
+        callback(err, null);
         } else {
-            callback(null, res);
+        callback(null, res);
         }
     })
 }

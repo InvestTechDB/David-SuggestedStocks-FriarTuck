@@ -20,8 +20,6 @@ app.get('/companies', (req, res) => {
   });
 });
 
-
-
 app.listen(port, () => {
   console.log('listening on the port man!');
 });

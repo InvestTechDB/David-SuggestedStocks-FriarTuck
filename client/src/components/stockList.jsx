@@ -9,11 +9,11 @@ class StockList extends React.Component {
         }
     }
 
-    populateCarousel(string) {
+    populateCarousel() {
         var carousel = [];
 
         for (var i = 1; i <= 12; i++) {
-            carousel.push(<div className='stocks'><Stock />{i + string}</div>);
+            carousel.push(<div className='stocks'><Stock /></div>);
         }
     
         return carousel;
@@ -71,11 +71,11 @@ class StockList extends React.Component {
 
 export default StockList; 
 
-function populateCarousel(string) {
+function populateCarousel() {
     var carousel = [];
 
     for (var i = 1; i <= 12; i++) {
-        carousel.push(<div className='stocks'><Stock />{i + string}</div>);
+        carousel.push(<div className='stocks'><Stock /></div>);
     }
 
     return carousel;

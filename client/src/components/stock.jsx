@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class Stock extends React.Component {
     constructor(props) {
         super(props);
@@ -12,8 +14,18 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
-        fetch('/companies').then((res) => {
-            console.log(res);
+        $.get('/companies', (dat) => {
+            var index = Math.floor(Math.random() * 100);
+            var list = JSON.parse(dat);
+            var stock = list[index];
+            
+
+
+            this.setState({
+                analystRating: stock.analystRating,
+                price: stock.currentPrice,
+                instrument: stock.name
+            })
         })
     }
 
@@ -45,6 +57,11 @@ class Stock extends React.Component {
             </a>
         )
     }
+
+}
+
+/// percentChange helper function
+var percentChange = () => {
 
 }
 
