@@ -19,13 +19,25 @@ class Stock extends React.Component {
             var list = JSON.parse(dat);
             var stock = list[index];
             
-
+            var percent = percentChange(stock.yesterdayClose.slice(1), stock.currentPrice.slice(1));
 
             this.setState({
                 analystRating: stock.analystRating,
                 price: stock.currentPrice,
-                instrument: stock.name
+                instrument: stock.name,
             })
+
+            if (percent[0] === '-') {
+                this.setState({
+                    change: '-',
+                    percent: percent.slice(1)
+                })
+            } else {
+                this.setState({
+                    change: '+',
+                    percent: percent
+                })
+            }
         })
     }
 
@@ -61,8 +73,12 @@ class Stock extends React.Component {
 }
 
 /// percentChange helper function
-var percentChange = () => {
-
+var percentChange = (first, second) => {
+    var numeral = ((Number(second) - Number(first)) / Number(first) * 100).toString();
+    var toRound = numeral.split('.');
+    var rounded = toRound[1].slice(0, 2);
+    toRound[1] = rounded;
+    return toRound.join('.') + '%';
 }
 
 
