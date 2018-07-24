@@ -11,6 +11,12 @@ class Stock extends React.Component {
         }
     }
 
+    componentDidMount() {
+        fetch('/companies').then((res) => {
+            console.log(res);
+        })
+    }
+
     render() {
         return (
             <a href='#'>
