@@ -20,6 +20,24 @@ app.get('/companies', (req, res) => {
   });
 });
 
+app.get('/companies/:id', (req, res) => {
+  db.currentPriceChange(req.params.id, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      db.connection.query(`SELECT * FROM Company WHERE id = ${req.params.id};`, (err1, result1) => {
+        if (err1) {
+          console.log(err1);
+        } else {
+          res.send(JSON.stringify(result1))
+        }
+      })
+    }
+  })
+
+})
+
+
 app.listen(port, () => {
   console.log('listening on the port man!');
 });

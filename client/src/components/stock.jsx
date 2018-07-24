@@ -8,8 +8,8 @@ class Stock extends React.Component {
             price: '$192.20',
             change: '+',
             percent: '0.95%',
-            instrument: 'Apple'
-
+            instrument: 'Apple',
+            index: ''
         }
     }
 
@@ -25,6 +25,7 @@ class Stock extends React.Component {
                 analystRating: stock.analystRating,
                 price: stock.currentPrice,
                 instrument: stock.name,
+                index: stock.id
             })
 
             if (percent[0] === '-') {
@@ -39,6 +40,20 @@ class Stock extends React.Component {
                 })
             }
         })
+
+        setInterval(() => {
+            var id = Math.floor(Math.random() * 100);
+            $.get( `/companies/${id}`, (dat) => {
+                var list = JSON.parse(dat);
+                console.log(id, this.state.index);
+                if (id === this.state.index) {
+                    this.setState({
+                        price: list[0].currentPrice
+                    });
+                }
+
+            });
+        }, 100);
     }
 
     render() {

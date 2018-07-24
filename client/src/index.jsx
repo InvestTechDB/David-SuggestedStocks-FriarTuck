@@ -4,25 +4,6 @@ import NewsList from './components/newslist.jsx';
 class App extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            slideCount: 1
-        };
-    }
-
-    slideNext() {
-        // this.setState({
-        //     slideCount: this.state.slideCount + 1
-        // })
-   
-    }
-
-    slidePrev() {
-        // this.setState({
-        //     slideCount: this.state.slideCount - 1
-        // })
-
-
     }
 
     render() {
@@ -36,7 +17,7 @@ class App extends React.Component {
 
                     <div id='carouselOverflow'>
                     
-                        <StockList count={this.state.slideCount} next={this.slideNext.bind(this)} prev={this.slidePrev.bind(this)}/>
+                        <StockList />
                     </div>
                 </div>
             </div>
