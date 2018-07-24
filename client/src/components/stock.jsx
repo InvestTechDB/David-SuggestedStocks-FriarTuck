@@ -45,11 +45,24 @@ class Stock extends React.Component {
             var id = Math.floor(Math.random() * 100);
             $.get( `/companies/${id}`, (dat) => {
                 var list = JSON.parse(dat);
-                console.log(id, this.state.index);
                 if (id === this.state.index) {
                     this.setState({
                         price: list[0].currentPrice
                     });
+
+                    var percentT = percentChange(list[0].yesterdayClose.slice(1), list[0].currentPrice.slice(1));
+                    if (percentT[0] === '-') {
+                        this.setState({
+                            change: '-',
+                            percent: percentT.slice(1)
+                        })
+                    } else {
+                        this.setState({
+                            change: '+',
+                            percent: percentT
+                        })
+                    }
+        
                 }
 
             });

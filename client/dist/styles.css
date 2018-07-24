@@ -133,6 +133,7 @@ h2{
 
 a{
     background-color:transparent;
+    color: black;
     -webkit-text-decoration-skip:objects;
 }
 
