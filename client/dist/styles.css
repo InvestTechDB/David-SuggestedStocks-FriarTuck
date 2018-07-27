@@ -98,6 +98,7 @@ p {
     margin:0;
     max-height:6ex;
     overflow:hidden;
+    overflow-y: hidden; 
     font-size:13px;
     font-weight:400;
     letter-spacing:.25px;
@@ -157,6 +158,23 @@ body .bold{
 a {
     text-decoration: none;
 }
+
+#mainNews {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    height: 134px;
+    width: 196px;
+    border-radius: 4px;
+}
+
+#views {
+    display:flex;
+    flex-direction: row;
+}
+
 
 
 /*! CSS Used from: https://d2ue93q3u507c2.cloudfront.net/assets/generated_assets/App.adc4bcc8a7b3acc96c8e.css */

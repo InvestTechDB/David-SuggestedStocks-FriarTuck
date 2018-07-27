@@ -5,7 +5,7 @@ class StockList extends React.Component {
         super(props);
         this.state = {
             pixel: 0,
-            count: 1
+            count: 1,
         }
     }
 
@@ -13,7 +13,7 @@ class StockList extends React.Component {
         var carousel = [];
 
         for (var i = 1; i <= 12; i++) {
-            carousel.push(<div className='stocks'><Stock /></div>);
+            carousel.push(<div className='stocks' key={i.toString()} value={i}><Stock /></div>);
         }
     
         return carousel;
@@ -40,26 +40,28 @@ class StockList extends React.Component {
     
     }
 
-    render () {
+    render() {
+        var style = this.props.props;
+
         return (
             <section className='carousel'>
             <div className='left'>
-            {this.state.count === 2 || this.state.count === 3 ? <a href='#' onClick={this.movingLeft.bind(this)}> <svg width="11" height="17" viewBox="0 0 11 17"><g fill-rule="evenodd" transform="rotate(45 1.243 3)"><rect width="12" height="3"></rect><rect width="3" height="12" x="9"></rect></g></svg>
+            {this.state.count === 2 || this.state.count === 3 ? <a href='#' onClick={this.movingLeft.bind(this)}> <svg width="11" height="17" viewBox="0 0 11 17"><g fillRule="evenodd" transform="rotate(45 1.243 3)"><rect width="12" height="3"></rect><rect width="3" height="12" x="9"></rect></g></svg>
             </a> : null }
             </div>
             <div id='currentScene'>
             <div className='slide' style= {{
-            'margin-left': `-${this.state.pixel}px`,
-            '-webkit-transition': 'all 0.3s ease-in-out',
-            '-moz-transition':'all 0.3s ease-in-out',
-            '-o-transition':'all 0.3s ease-in-out',
+            'marginLeft': `-${this.state.pixel}px`,
+            'WebkitTransition': 'all 0.3s ease-in-out',
+            'MozTransition':'all 0.3s ease-in-out',
+            'OTransition':'all 0.3s ease-in-out',
             'transition':'all 0.3s ease-in-out',
             }}>
                 {this.populateCarousel('hello')}
             </div>
             </div>
             <div className='right'>
-            {this.state.count === 1 || this.state.count === 2 ? <a href='#' onClick={this.movingRight.bind(this)}> <svg width="11" height="17" viewBox="0 0 11 17"><g fill-rule="evenodd" transform="rotate(45 1.243 3)"><rect width="12" height="3"></rect><rect width="3" height="12" x="9"></rect></g></svg>
+            {this.state.count === 1 || this.state.count === 2 ? <a href='#' style={style} onClick={this.movingRight.bind(this)}> <svg width="11" height="17" viewBox="0 0 11 17"><g fillRule="evenodd" transform="rotate(45 1.243 3)"><rect width="12" height="3"></rect><rect width="3" height="12" x="9"></rect></g></svg>
             </a> : null }
             </div>
             
@@ -75,7 +77,7 @@ function populateCarousel() {
     var carousel = [];
 
     for (var i = 1; i <= 12; i++) {
-        carousel.push(<div className='stocks'><Stock /></div>);
+        carousel.push(<div className='stocks' key={i.toString()} value={i}><Stock /></div>);
     }
 
     return carousel;
