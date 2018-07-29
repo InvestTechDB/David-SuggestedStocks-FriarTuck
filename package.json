@@ -15,7 +15,8 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./client/src/components/__tests__/setup/setupEnzyme.js",
-    "testPathIgnorePatterns": ["./client/src/components/__tests__/setup"]
+    "testPathIgnorePatterns": ["./client/src/components/__tests__/setup"],
+    "testURL": "http://localhost/"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
