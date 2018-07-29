@@ -6,9 +6,9 @@ var moment = require('moment');
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            close: false
-        }
+        // this.state = {
+        //     close: false
+        // }
     }
 
     componentDidMount() {
@@ -34,24 +34,26 @@ class App extends React.Component {
     }
 
     render() {
-        var style = {
-            'background': this.state.close ? 'black' : 'white',
-            'fontColor': this.state.close ? 'white' : 'black',
-            'color': this.state.close ? 'white' : 'black'
-        }
+        // var style = {
+        //     'background': this.state.close ? 'black' : 'white',
+        //     'fontColor': this.state.close ? 'white' : 'black',
+        //     'color': this.state.close ? 'white' : 'black'
+        // }
 
         return (
-            <div id='mainContainer' style={style}>
-                <div id='newslist'>
-                    <NewsList />
-                </div>
-               <h2 id='header'><strong> People Also Bought </strong></h2>
-                <div id='cssCarousel' style={style}> 
-                    <div id='carouselOverflow'>
-                        <StockList props={style}/>
-                    </div>
-                </div>
+        <div id='mainContainer'>
+            <div id='newslist'>
+                <NewsList />
             </div>
+        <section id='suggestedSection'> 
+            <header id='headerSuggested'>
+              <div id='headerWrap'>
+                <h2 id='header'> People Also Bought</h2>
+              </div>
+             </header>
+            <StockList />
+        </section>
+        </div>
         )
     }
 }

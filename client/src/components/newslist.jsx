@@ -10,7 +10,8 @@ class NewsList extends React.Component {
                 description: 'Investing.com-Technology Stocks',
                 viewership: 466,
                 url: '#',
-                img: 'http://lorempixel.com/400/200'
+                img: 'http://lorempixel.com/400/200',
+                time: '7h'
             
         }
     }
@@ -21,11 +22,14 @@ class NewsList extends React.Component {
         <div>
         <div id='newsMainHead'>
         <h2><strong> News </strong></h2>
+        <div id='showMore'>
         <h6> Show More </h6>
-        </div>
-        <div>
-        <Newz props={this.state.data} />
         <a href='#' />
+        </div>
+        </div>
+        <div id='theNewz'>
+            <Newz props={this.state.data} />
+        <a href='https://www.google.com'/>
         </div>
         </div>
     )
