@@ -1,3 +1,4 @@
+import React from 'react';
 import Stock from './stock.jsx';
 
 class StockList extends React.Component {

@@ -1,3 +1,4 @@
+import React from 'react';
 import NewsIndividual from './newsIndividual.jsx';
 
 var Newz = (props) => {

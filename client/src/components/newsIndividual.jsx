@@ -1,4 +1,8 @@
+import React from 'react';
+
 var NewsIndividual = (props) => {
+    props = props || {data : {}};
+
     return  (
         <div id='mainNews'>
             <img src={props.data.img} />

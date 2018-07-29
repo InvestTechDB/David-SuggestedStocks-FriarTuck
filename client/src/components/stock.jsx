@@ -1,4 +1,5 @@
-import $ from 'jquery';
+import React from 'react';
+const $ = require('jquery');
 
 class Stock extends React.Component {
     constructor(props) {

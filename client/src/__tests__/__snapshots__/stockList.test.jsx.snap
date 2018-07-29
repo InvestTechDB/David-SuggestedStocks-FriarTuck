@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div
+  id="cssCarousel"
+>
+  <div
+    className="left"
+  />
+  <div
+    id="currentScene"
+  >
+    <div
+      className="slide"
+      style={
+        Object {
+          "MozTransition": "all 0.3s ease-in-out",
+          "OTransition": "all 0.3s ease-in-out",
+          "WebkitTransition": "all 0.3s ease-in-out",
+          "marginLeft": "-0px",
+          "transition": "all 0.3s ease-in-out",
+        }
+      }
+    >
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+      <Stock />
+    </div>
+  </div>
+  <div
+    className="right"
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+    >
+       
+      <svg
+        height="17"
+        viewBox="0 0 11 17"
+        width="11"
+      >
+        <g
+          fillRule="evenodd"
+          transform="rotate(45 1.243 3)"
+        >
+          <rect
+            height="3"
+            width="12"
+          />
+          <rect
+            height="12"
+            width="3"
+            x="9"
+          />
+        </g>
+      </svg>
+    </a>
+  </div>
+</div>
+`;

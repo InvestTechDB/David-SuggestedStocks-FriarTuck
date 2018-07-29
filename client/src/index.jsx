@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import StockList from './components/stockList.jsx';
 import NewsList from './components/newslist.jsx';
 import tz from 'moment-timezone';
@@ -59,7 +61,7 @@ class App extends React.Component {
 }
 
 
-
+export default App;
 
 
 
