@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div>
+  <div
+    id="newsMainHead"
+  >
+    <h2>
+      <strong>
+         News 
+      </strong>
+    </h2>
+    <div
+      id="showMore"
+    >
+      <h6>
+         Show More 
+      </h6>
+      <a
+        href="#"
+      />
+    </div>
+  </div>
+  <div
+    id="theNewz"
+  >
+    <Newz
+      props={
+        Object {
+          "description": "Investing.com-Technology Stocks",
+          "img": "http://lorempixel.com/400/200",
+          "source": "Yahoo Finance",
+          "time": "7h",
+          "title": "Stocks, Stocks, and more Stocks",
+          "url": "#",
+          "viewership": 466,
+        }
+      }
+    />
+    <a
+      href="https://www.google.com"
+    />
+  </div>
+</div>
+`;

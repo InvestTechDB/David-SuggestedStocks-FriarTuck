@@ -1,3 +1,4 @@
+import React from 'react';
 import Newz from './news.jsx';
 
 class NewsList extends React.Component {
