@@ -4,6 +4,7 @@ import StockList from './components/stockList.jsx';
 import NewsList from './components/newslist.jsx';
 import tz from 'moment-timezone';
 var moment = require('moment');
+import css from '../dist/styles.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -43,14 +44,14 @@ class App extends React.Component {
         // }
 
         return (
-        <div id='mainContainer'>
-            <div id='newslist'>
+        <div id={css.mainContainer}>
+            <div id={css.newslist}>
                 <NewsList />
             </div>
-        <section id='suggestedSection'> 
-            <header id='headerSuggested'>
-              <div id='headerWrap'>
-                <h2 id='header'> People Also Bought</h2>
+        <section id={css.suggestedSection}> 
+            <header id={css.headerSuggested}>
+              <div id={css.headerWrap}>
+                <h2 id={css.header}> People Also Bought</h2>
               </div>
              </header>
             <StockList />
@@ -66,4 +67,4 @@ export default App;
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('shayaun-root'));

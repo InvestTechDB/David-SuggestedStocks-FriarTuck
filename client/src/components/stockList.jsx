@@ -1,5 +1,6 @@
 import React from 'react';
 import Stock from './stock.jsx';
+import css from '../../dist/styles.css';
 
 class StockList extends React.Component {
     constructor(props) {
@@ -47,15 +48,15 @@ class StockList extends React.Component {
         var style = this.props.props;
 
         return (
-            <div id='cssCarousel'>
+            <div id={css.cssCarousel}>
 
-            <div className='left'>
+            <div className={css.left}>
                 {this.state.count === 2 || this.state.count === 3 ? <a href='#' onClick={this.movingLeft.bind(this)}> <svg width="11" height="17" viewBox="0 0 11 17"><g fillRule="evenodd" transform="rotate(45 1.243 3)"><rect width="12" height="3"></rect><rect width="3" height="12" x="9"></rect></g></svg>
                 </a> : null }
             </div>
 
-            <div id='currentScene'>
-                <div className='slide' style= {{
+            <div id={css.currentScene}>
+                <div className={css.slide} style= {{
                 'marginLeft': `-${this.state.pixel}px`,
                 'WebkitTransition': 'all 0.3s ease-in-out',
                 'MozTransition':'all 0.3s ease-in-out',
@@ -68,7 +69,7 @@ class StockList extends React.Component {
 
 
 
-            <div className='right'>
+            <div className={css.right}>
             {this.state.count === 1 || this.state.count === 2 ? <a href='#' style={style} onClick={this.movingRight.bind(this)}> <svg width="11" height="17" viewBox="0 0 11 17"><g fillRule="evenodd" transform="rotate(45 1.243 3)"><rect width="12" height="3"></rect><rect width="3" height="12" x="9"></rect></g></svg>
             </a> : null }
             </div>
@@ -86,7 +87,7 @@ function populateCarousel() {
     var carousel = [];
 
     for (var i = 1; i <= 12; i++) {
-        carousel.push(<div className='stocks' key={i.toString()} value={i}><Stock /></div>);
+        carousel.push(<div className={css.stocks} key={i.toString()} value={i}><Stock /></div>);
     }
 
     return carousel;

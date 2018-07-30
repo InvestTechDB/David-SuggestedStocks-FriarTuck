@@ -1,5 +1,7 @@
 import React from 'react';
 import NewsIndividual from './newsIndividual.jsx';
+import css from '../../dist/styles.css';
+
 
 var Newz = (props) => {
     var rows = [];

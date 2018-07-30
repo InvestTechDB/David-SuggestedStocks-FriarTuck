@@ -1,5 +1,7 @@
 import React from 'react';
 import Newz from './news.jsx';
+import css from '../../dist/styles.css';
+
 
 class NewsList extends React.Component {
     constructor(props) {
@@ -23,12 +25,12 @@ class NewsList extends React.Component {
         <div>
         <div id='newsMainHead'>
         <h2><strong> News </strong></h2>
-        <div id='showMore'>
+        <div id={css.showMore}>
         <h6> Show More </h6>
         <a href='#' />
         </div>
         </div>
-        <div id='theNewz'>
+        <div id={css.theNewz}>
             <Newz props={this.state.data} />
         <a href='https://www.google.com'/>
         </div>
