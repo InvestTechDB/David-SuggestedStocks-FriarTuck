@@ -1,10 +1,12 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var port = 3000;
+var port = process.env.PORT || 3001;
 var faker = require('faker');
+const morgan = require('morgan');
 const db = require('./database/index.js');
 
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

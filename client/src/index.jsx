@@ -6,7 +6,7 @@ import tz from 'moment-timezone';
 var moment = require('moment');
 import css from '../dist/styles.css';
 
-class App extends React.Component {
+class SuggestedStock extends React.Component {
     constructor(props) {
         super(props);
         // this.state = {
@@ -62,9 +62,4 @@ class App extends React.Component {
 }
 
 
-export default App;
-
-
-
-
-ReactDOM.render(<App />, document.getElementById('shayaun-root'));
+export default SuggestedStock;
