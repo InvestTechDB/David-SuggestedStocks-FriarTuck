@@ -1,6 +1,7 @@
 import React from 'react';
 const $ = require('jquery');
 import css from '../../dist/styles.css';
+var port = process.env.PORT || 3001;
 
 
 class Stock extends React.Component {
@@ -17,7 +18,7 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
-        $.get('/companies', (dat) => {
+        $.get(`/companies`, (dat) => {
             var index = Math.floor(Math.random() * 100);
             var list = JSON.parse(dat);
             var stock = list[index];

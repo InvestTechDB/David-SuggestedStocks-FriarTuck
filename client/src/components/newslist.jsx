@@ -23,7 +23,7 @@ class NewsList extends React.Component {
     render() {
     return (
         <div>
-         <div id='newsMainHead'>
+         <div id={css.newsMainHead}>
             <h2><strong> News </strong></h2>
             <div id={css.showMore}>
             <h6> Show More </h6>

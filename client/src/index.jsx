@@ -47,7 +47,7 @@ class SuggestedStock extends React.Component {
         <div id={css.mainContainer}>
             <div id={css.newslist}>
                 <NewsList />
-            </div>
+            </div> 
         <section id={css.suggestedSection}> 
             <header id={css.headerSuggested}>
               <div id={css.headerWrap}>
@@ -63,3 +63,4 @@ class SuggestedStock extends React.Component {
 
 
 export default SuggestedStock;
+window.SuggestedStock = SuggestedStock;

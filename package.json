@@ -11,7 +11,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "react-dev": "webpack -d --watch",
-    "start": "node ./server/database/index.js && node ./server/database/seeder.js && nodemon ./server/server.js "
+    "start": "node ./server/database/index.js && node ./server/database/seeder.js && nodemon ./server/server.js ",
+    "starting": "node ./server/database/index.js && node ./server/database/seeder.js",
+    "compile": "webpack -d && grunt js",
+    "grunting": "grunt && grunt js && grunt css"
   },
   "jest": {
     "setupFiles": [
