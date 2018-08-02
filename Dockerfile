@@ -9,11 +9,17 @@ ENV PORT=8080
 RUN npm install  
 
 # COPY . .
-RUN npm run starting
+# RUN npm run starting
 RUN npm run grunting
 RUN npm run compile
 RUN npm run grunting
-RUN npm install nodemon -g
+# RUN npm install nodemon -g
+RUN yarn install --ignore-engines
 
+# ENTRYPOINT [ "/src/app/custom.sh" ]
+# RUN ["chmod", "+x", "/src/app/custom.sh"]
+ 
 EXPOSE 8080
-CMD nodemon /src/app/server/server.js  
+# CMD node ./server/database/index.js && node ./server/database/seeder.js && node ./server/server.js
+
+CMD node ./server/server.js && node ./server/database/seeder.js

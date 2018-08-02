@@ -13,4 +13,3 @@ CREATE TABLE Company (
     genre char(10) NOT NULL, 
     PRIMARY KEY (id)
 );
-
