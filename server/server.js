@@ -21,9 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-// use ':/companies'
-
-app.use( express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get(`/companies`, (req, res) => {
   db.grabAllCompanies((err, result) => {
@@ -52,6 +50,14 @@ app.get(`/companies/:id`, (req, res) => {
 
 })
 
+
+function seed() {
+  for (var i = 1; i <= 100; i++) {
+    db.connection.query(`INSERT into Company (name, yesterdayClose, currentPrice, analystRating, genre) VALUES ("${faker.company.companyName()}", "${faker.finance.amount(1.00, 5.00, 2, '$')}", "${faker.finance.amount(1.00, 5.00, 2, '$')}", "${faker.finance.amount(0.00,5.00,2,"%")}", "top100");`)
+}
+}
+
+setTimeout(seed.bind(this), 20000);
 
 app.listen(PORT, () => {
   'listening on port ' + PORT;

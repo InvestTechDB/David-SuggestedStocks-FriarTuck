@@ -22,4 +22,4 @@ RUN yarn install --ignore-engines
 EXPOSE 8080
 # CMD node ./server/database/index.js && node ./server/database/seeder.js && node ./server/server.js
 
-CMD node ./server/server.js && node ./server/database/seeder.js
+CMD node ./server/server.js 

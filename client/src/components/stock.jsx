@@ -70,7 +70,7 @@ class Stock extends React.Component {
                 }
 
             });
-        }, 100);
+        }, 20000);
     }
 
     render() {
