@@ -7,7 +7,7 @@ var Newz = (props) => {
     var rows = [];
 
     for (var i = 1; i <= 3; i++) {
-        rows.push(<NewsIndividual data={props.props} />)
+        rows.push(<NewsIndividual data={props.props} i={i} />)
     }
     return (
         <div>

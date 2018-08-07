@@ -4,10 +4,19 @@ import css from '../../dist/styles.css';
 
 var NewsIndividual = (props) => {
     props = props || {data : {}};
+    var img;
+
+    if (props.i === 1) {
+        img = props.data.img1
+    } else if (props.i === 2) {
+        img = props.data.img2
+    } else {
+        img = props.data.img3
+    }
 
     return  (
         <div id={css.mainNews}>
-            <img src={props.data.img} />
+            <img src={img} />
             <div id={css.newsInfoContainer}>
                 <div id={css.Newsheaders}>
                     <div id={css.articleTime}> 

@@ -3,7 +3,6 @@ const $ = require('jquery');
 import css from '../../dist/styles.css';
 var port = process.env.PORT || 3001;
 
-
 class Stock extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +17,7 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
-        $.get(`/companies`, (dat) => {
+        $.get(`http://ec2-18-220-173-196.us-east-2.compute.amazonaws.com:8080/companies`, (dat) => {
             var index = Math.floor(Math.random() * 100);
             var list = JSON.parse(dat);
             var stock = list[index];
@@ -47,7 +46,7 @@ class Stock extends React.Component {
 
         setInterval(() => {
             var id = Math.floor(Math.random() * 100);
-            $.get( `/companies/${id}`, (dat) => {
+            $.get( `http://ec2-18-220-173-196.us-east-2.compute.amazonaws.com:8080/companies/${id}`, (dat) => {
                 var list = JSON.parse(dat);
                 if (id === this.state.index) {
                     this.setState({

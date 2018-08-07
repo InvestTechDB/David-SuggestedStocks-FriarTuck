@@ -3,11 +3,14 @@
     box-sizing: inherit;
 }
 
-
-
+#shayaun-root {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* BODY !!! */
-body {
+#bodyShayaun {
     font-family: DIN Pro,-apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -15,12 +18,7 @@ body {
     line-height: 19px;
 }
 
-div {
-    display: block;
-}
-
-
-h2 {
+#shayaun-root h2 {
     display: block;
     font-size: 26px;
     font-weight: 500;
@@ -33,7 +31,7 @@ h2 {
 
 }
 
-p {
+#shayaun-root p {
     display: block;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
@@ -268,12 +266,13 @@ body .bold{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    width: 40rem;
 }
 
 #mainNews {
     display: flex;
     flex-direction: row;
+    width: 40rem;
 }
 
 img {
