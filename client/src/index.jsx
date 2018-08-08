@@ -9,40 +9,9 @@ import css from '../dist/styles.css';
 class SuggestedStock extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     close: false
-        // }
-    }
-
-    componentDidMount() {
-        setInterval(() => {
-            this.checkIfClose();
-        }, 1000)
-    }
-
-    checkIfClose() {
-        // var time = moment().tz('America/New_York').format('LT');
-        // var today = new Date().getUTCHours();
-
-        // if (today >= 14 && today <= 21) {
-        //     this.setState({
-        //         close: false
-        //     })
-        // } else {
-        //     this.setState({
-        //         close: true
-        //     })
-        // }
-
     }
 
     render() {
-        // var style = {
-        //     'background': this.state.close ? 'black' : 'white',
-        //     'fontColor': this.state.close ? 'white' : 'black',
-        //     'color': this.state.close ? 'white' : 'black'
-        // }
-
         return (
         <div id={css.mainContainer}>
             <div id={css.newslist}>
