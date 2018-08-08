@@ -54,7 +54,7 @@ app.delete(`/companies/:id`, (req, res) => { // delete placeholder
 
 });
 
-app.post(`/companies/:info`, (req, res) => { // post placeholder
+app.post(`/companies/`, (req, res) => { // post placeholder
 
 });
 
