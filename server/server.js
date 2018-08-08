@@ -50,15 +50,15 @@ app.get(`/companies/:id`, (req, res) => { // get
 
 })
 
-app.delete(`/companies/delete/:id`, (req, res) => { // delete placeholder
+app.delete(`/companies/:id`, (req, res) => { // delete placeholder
 
 });
 
-app.post(`/companies/post/:info`, (req, res) => { // post placeholder
+app.post(`/companies/:info`, (req, res) => { // post placeholder
 
 });
 
-app.put(`/companies/put/:id/:info`, (req, res) => { // put placeholder
+app.put(`/companies/:id/`, (req, res) => { // put placeholder
 
 });
 
