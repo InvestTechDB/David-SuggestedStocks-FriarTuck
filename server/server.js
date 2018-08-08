@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get(`/companies`, (req, res) => {
+app.get(`/companies`, (req, res) => { // get
   db.grabAllCompanies((err, result) => {
     if (err) {
       console.log(err);
@@ -33,8 +33,8 @@ app.get(`/companies`, (req, res) => {
   });
 });
 
-app.get(`/companies/:id`, (req, res) => {
-  db.currentPriceChange(req.params.id, (err, result) => {
+app.get(`/companies/:id`, (req, res) => { // get
+  db.currentPriceChange(req.params.id, (err, result) => { // put
     if (err) {
       console.log(err);
     } else {
@@ -50,6 +50,17 @@ app.get(`/companies/:id`, (req, res) => {
 
 })
 
+app.delete(`/companies/:id`, (req, res) => { // delete placeholder
+
+});
+
+app.post(`/companies/`, (req, res) => { // post placeholder
+
+});
+
+app.put(`/companies/:id/`, (req, res) => { // put placeholder
+
+});
 
 function seed() {
   for (var i = 1; i <= 100; i++) {
