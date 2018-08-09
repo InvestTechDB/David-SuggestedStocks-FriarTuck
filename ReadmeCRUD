@@ -1,0 +1,7 @@
+Required:
+  GET `/api/companies` // gets everything from 12 random companies 
+  PUT `/api/companies/:id` // updates the 12 random companies with new prices
+  
+Extended:
+  DELETE `/api/companies/:id` // deletes a company from the database
+  POST `/api/companies` // adds a company to the database
