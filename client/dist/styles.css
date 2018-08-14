@@ -9,6 +9,10 @@
     justify-content: center;
 }
 
+div {
+    display: block;
+}
+
 /* BODY !!! */
 #bodyShayaun {
     font-family: DIN Pro,-apple-system, BlinkMacSystemFont, sans-serif;
