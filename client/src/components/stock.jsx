@@ -17,8 +17,9 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
-        $.get(`http://localhost:3001/companies/`, (dat) => {
-            var index = Math.floor(Math.random() * 12);
+
+        $.get(`http://localhost:3001/companies`, (dat) => {
+            var index = Math.floor(Math.random() * 100);
             var list = JSON.parse(dat);
             var stock = list[index];
             var percent = percentChange(stock.yesterdayclose.slice(1), stock.currentprice.slice(1));
@@ -42,6 +43,7 @@ class Stock extends React.Component {
                 })
             }
         })
+
     }
 
     render() {

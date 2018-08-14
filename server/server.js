@@ -1,29 +1,30 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var PORT = process.env.PORT || 3001;
-var faker = require('faker');
-var morgan = require('morgan');
-var db = require('./database/index.js');
-var path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const faker = require('faker');
+const morgan = require('morgan');
+const path = require('path');
+const db = require('./database/index.js');
 
-var allowCrossDomain = function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', "*");
+const PORT = process.env.PORT || 3001;
+
+const allowCrossDomain = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
-}
+};
 
+const app = express();
 app.use(allowCrossDomain);
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get(`/companies`, (req, res) => { // get
+app.get('/companies', (req, res) => {
   db.grabAllCompanies((err, result) => {
     if (err) {
       console.log(err);
@@ -45,6 +46,7 @@ app.put(`/companies/:id`, (req, res) => { // put placeholder
 
 });
 
+
 app.listen(PORT, () => {
-  'listening on port ' + PORT;
+  console.log('listening on port ' + PORT);
 });
