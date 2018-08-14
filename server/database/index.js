@@ -1,33 +1,22 @@
-const mysql = require('mysql');
-const mysqlConfig = require('./config.js');
+// const mysql = require('mysql');
+// const mysqlConfig = require('./config.js');
 const faker = require('faker');
 
-const connection = mysql.createConnection(mysqlConfig);
+// const connection = mysql.createConnection(mysqlConfig);
+
+var pgp = require('pg-promise')(/*options*/)
+var db = pgp('postgres://Janet:@localhost:5432/recommended_stocks')
 
 const grabAllCompanies = (callback) => {
-    connection.query(`
-    SELECT * FROM Company;
-    `, (err, res) => {
-        if (err) {
-        callback(err, null);
-        } else {
-        callback(null, res);
-        }
-    });
+    db.many(`SELECT * FROM company where id=$1 or id=$2 or id=$3 or id=$4 or id=$5 or id=$6 or id=$7 or id=$8 or id=$9 or id=$10 or id=$11 or id=$12`, [Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1),Math.floor(Math.random() * 10000000 +1)])
+    .then(function (data) {
+    callback(null, data)
+    })
+    .catch(function (error) {
+    console.log('ERROR:', error)
+    })
 };
 
-const currentPriceChange = (idx, callback) => {
-    connection.query(`UPDATE Company SET currentPrice = '${faker.finance.amount(1.00, 5.00, 2, '$')}' WHERE Id = ${idx};`, (err, res) => {
-        if (err) {
-            callback(err, null);
-        } else {
-            callback(null, res);
-        }
-    });
-}
-
 module.exports = {
-    connection: connection,
-    grabAllCompanies: grabAllCompanies,
-    currentPriceChange: currentPriceChange
+    grabAllCompanies: grabAllCompanies
 };

@@ -11,8 +11,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "react-dev": "webpack -d --watch",
-    "start": "node ./server/database/index.js && node ./server/database/seeder.js && nodemon ./server/server.js ",
-    "starting": "node ./server/database/index.js && node ./server/database/seeder.js",
+    "start": "nodemon ./server/server.js ",
     "compile": "webpack -d && grunt js",
     "grunting": "grunt && grunt js && grunt css"
   },
@@ -27,6 +26,7 @@
   "dependencies": {
     "babel-core": "^6.26.3",
     "body-parser": "^1.18.3",
+    "cql": "0.0.9",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "faker": "^4.1.0",
@@ -69,6 +69,7 @@
     "jest": "^23.4.2",
     "jest-enzyme": "^6.0.2",
     "jest-jquery-matchers": "^2.1.0",
+    "pg-promise": "^8.4.5",
     "react-test-renderer": "^16.4.1",
     "regenerator-runtime": "^0.12.0",
     "style-loader": "^0.21.0",

@@ -17,12 +17,11 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
-        $.get(`http://ec2-18-220-173-196.us-east-2.compute.amazonaws.com:8080/companies`, (dat) => {
-            var index = Math.floor(Math.random() * 100);
+        $.get(`http://localhost:3001/companies/`, (dat) => {
+            var index = Math.floor(Math.random() * 12);
             var list = JSON.parse(dat);
             var stock = list[index];
-            
-            var percent = percentChange(stock.yesterdayClose.slice(1), stock.currentPrice.slice(1));
+            var percent = percentChange(stock.yesterdayclose.slice(1), stock.currentprice.slice(1));
 
             this.setState({
                 analystRating: stock.analystRating,
@@ -43,33 +42,6 @@ class Stock extends React.Component {
                 })
             }
         })
-
-        setInterval(() => {
-            var id = Math.floor(Math.random() * 100);
-            $.get( `http://ec2-18-220-173-196.us-east-2.compute.amazonaws.com:8080/companies/${id}`, (dat) => {
-                var list = JSON.parse(dat);
-                if (id === this.state.index) {
-                    this.setState({
-                        price: list[0].currentPrice
-                    });
-
-                    var percentT = percentChange(list[0].yesterdayClose.slice(1), list[0].currentPrice.slice(1));
-                    if (percentT[0] === '-') {
-                        this.setState({
-                            change: '-',
-                            percent: percentT.slice(1)
-                        })
-                    } else {
-                        this.setState({
-                            change: '+',
-                            percent: percentT
-                        })
-                    }
-        
-                }
-
-            });
-        }, 20000);
     }
 
     render() {
