@@ -50,6 +50,17 @@ app.get('/companies/:id', (req, res) => {
   });
 });
 
+app.delete(`/companies/:id`, (req, res) => { // delete placeholder
+
+});
+
+app.post(`/companies/`, (req, res) => { // post placeholder
+
+});
+
+app.put(`/companies/:id/`, (req, res) => { // put placeholder
+
+});
 
 function seed() {
   for (let i = 1; i <= 100; i += 1) {
